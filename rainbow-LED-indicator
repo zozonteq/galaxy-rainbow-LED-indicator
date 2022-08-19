@@ -1,0 +1,74 @@
+#!/bin/sh
+
+maxBrightness=120
+sleepTime=0
+r=$((maxBrightness-1))
+g=0
+b=1
+
+rstat=0
+gstat=2
+bstat=1
+
+# 0 == Add , 1 == remove , 2 == stop
+
+while [ true ] ; do
+
+
+        if [ $rstat -eq 0 ] ; then
+                r=$((r+1))
+        elif [ $rstat -eq 1 ] ; then
+                r=$((r-1))
+        else
+                r=$r
+        fi
+
+        if [ $gstat -eq 0 ] ; then
+                g=$((g+1))
+        elif [ $gstat -eq 1 ] ; then
+                g=$((g-1))
+        else
+                g=$g
+        fi
+
+        if [ $bstat -eq 0 ] ; then
+                b=$((b+1))
+        elif [ $bstat -eq 1 ] ; then
+                b=$((b-1))
+        else
+                b=$b
+        fi
+
+
+
+        if [ $r -eq $maxBrightness ] ; then
+                rstat=1
+                gstat=0
+                bstat=2
+        fi
+        if [ $g -eq $maxBrightness ] ; then
+                rstat=2
+                gstat=1
+                bstat=0
+        fi
+        if [ $b -eq $maxBrightness ] ; then
+                rstat=0
+                gstat=2
+                bstat=1
+        fi
+
+        if [ $r -eq -1 ] ; then
+                r=0
+        fi
+
+        if [ $g -eq -1 ] ; then
+                g=0
+        fi
+        if [ $b -eq -1 ] ; then
+                b=0
+        fi
+        sleep $sleepTime
+        sh set-leds-color $r $g $b
+
+        echo r:$r,g:$g,b:$b
+done
