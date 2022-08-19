@@ -13,6 +13,5 @@ Run these commands on terminal(termux).
 ```
 $ git clone https://github.com/zozonteq/galaxy-rainbow-LED-indicator
 $ cd galaxy-rainbow-LED-indicator
-$ su
-$ sh rainbow-LED-indicator
+$ su -c sh rainbow-LED-indicator
 ```
