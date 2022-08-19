@@ -1,0 +1,3 @@
+echo $1 > /sys/class/leds/led_r/brightness
+echo $2 > /sys/class/leds/led_g/brightness
+echo $3 > /sys/class/leds/led_b/brightness
