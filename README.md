@@ -4,13 +4,11 @@
 # devices
 Root is require to run this program.
 ```
-Galaxy S8  
-Galaxy S8+
+Galaxy S8  [SnapDragon]
+Galaxy S8+ [SnapDragon]
 ```
-However, if /sys/leds/led_r, /sys/leds/led_g and /sys/leds/led_b are exists, it may work with other devices as well.
-
 # How to run
-Run these commands on terminal(termux).
+Run these commands on termux.
 ```
 $ git clone https://github.com/zozonteq/galaxy-rainbow-LED-indicator
 $ cd galaxy-rainbow-LED-indicator
