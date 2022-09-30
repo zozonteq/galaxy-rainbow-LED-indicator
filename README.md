@@ -10,7 +10,7 @@ Galaxy S8+ [SnapDragon]
 # How to run
 Run these commands on termux.
 ```
-$ git clone https://github.com/zozonteq/galaxy-rainbow-LED-indicator
-$ cd galaxy-rainbow-LED-indicator
-$ su -c sh rainbow-LED-indicator
+$ git clone https://github.com/zozonteq/galaxy-rainbow-LED-indicator # clone this repo.
+$ cd galaxy-rainbow-LED-indicator # go to project.
+$ su -c sh rainbow-LED-indicator # execute script.
 ```
