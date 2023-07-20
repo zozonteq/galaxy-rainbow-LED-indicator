@@ -10,7 +10,7 @@ rstat=0
 gstat=2
 bstat=1
 
-# 0 == Add , 1 == remove , 2 == stop
+# 0 == Add , 1 == Sub , 2 == stop
 
 while [ true ] ; do
 
