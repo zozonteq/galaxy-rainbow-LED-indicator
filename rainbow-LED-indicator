@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# cat /sys/class/leds/led_r/max_brightness
+# use this command to check max brightness.
+
 maxBrightness=120
 sleepTime=0
 r=$((maxBrightness-1))
@@ -13,8 +16,6 @@ bstat=1
 # 0 == Add , 1 == Sub , 2 == stop
 
 while [ true ] ; do
-
-
         if [ $rstat -eq 0 ] ; then
                 r=$((r+1))
         elif [ $rstat -eq 1 ] ; then
@@ -22,7 +23,6 @@ while [ true ] ; do
         else
                 r=$r
         fi
-
         if [ $gstat -eq 0 ] ; then
                 g=$((g+1))
         elif [ $gstat -eq 1 ] ; then
@@ -30,7 +30,6 @@ while [ true ] ; do
         else
                 g=$g
         fi
-
         if [ $bstat -eq 0 ] ; then
                 b=$((b+1))
         elif [ $bstat -eq 1 ] ; then
@@ -38,8 +37,6 @@ while [ true ] ; do
         else
                 b=$b
         fi
-
-
 
         if [ $r -eq $maxBrightness ] ; then
                 rstat=1
@@ -56,11 +53,9 @@ while [ true ] ; do
                 gstat=2
                 bstat=1
         fi
-
         if [ $r -eq -1 ] ; then
                 r=0
         fi
-
         if [ $g -eq -1 ] ; then
                 g=0
         fi
@@ -69,6 +64,5 @@ while [ true ] ; do
         fi
         sleep $sleepTime
         sh set-leds-color $r $g $b
-
         echo r:$r,g:$g,b:$b
 done
